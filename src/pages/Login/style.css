@@ -1,0 +1,23 @@
+div.content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+div.container {
+  display: flex;
+  height: 550px;
+  width: 550px;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 7px;
+  padding-bottom: 35px;
+}
