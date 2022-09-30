@@ -11,8 +11,8 @@ function Login() {
     <div className="content">
       <div className="container">
         <div className="text">
-          <h1>CoFrinn</h1>
-          <h5>A melhor forma de gerenciar suas despesas financeiras</h5>
+          <h1 className="title">CoFrinn</h1>
+          <h5 className="subtitle">A melhor forma de gerenciar suas despesas financeiras</h5>
         </div>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -31,13 +31,11 @@ function Login() {
           </div>
         </Form>
         <div className="buttons">
-          <ButtonGroup>
             <Button variant="second" size="lg"> Entrar </Button>
             <Button variant="primary" size="lg"> Entrar com Google </Button>
-          </ButtonGroup>
         </div>
         <div className="description2">
-          <h5>
+          <h5 className="text-description2">
             Ainda não tem uma conta? Clique aqui para cadastrar-se
           </h5>
         </div>
