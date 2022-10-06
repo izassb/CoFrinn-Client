@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 import Nav from 'react-bootstrap/Nav';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,12 +30,18 @@ function Login() {
           </div>
         </Form>
         <div className="buttons">
-            <Button variant="second" size="lg"> Entrar </Button>
-            <Button variant="primary" size="lg"> Entrar com Google </Button>
+          <Button variant="second" size="lg"> Entrar </Button>
+          <Button variant="primary" size="lg"> Entrar com Google </Button>
         </div>
         <div className="description2">
           <h5 className="text-description2">
-            Ainda não tem uma conta? Clique aqui para cadastrar-se
+            Ainda não tem uma conta?
+          </h5>
+          &nbsp;
+          <a href="google.com"> Clique aqui </a>
+          &nbsp;
+          <h5 className="text-description2">
+            para cadastrar-se
           </h5>
         </div>
       </div>
