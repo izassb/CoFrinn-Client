@@ -1,0 +1,92 @@
+h1.title {
+    font-style: italic;
+    font-size: 33px;
+  }
+  
+  h5.subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.45);
+  }
+  
+  div.content {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8FDFF;
+  }
+  
+  div.container {
+    display: flex;
+    height: 550px;
+    width: 550px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  div.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 35px;
+  }
+  
+  Form {
+    display: flex;
+    width: 550px;
+    flex-direction: column;
+    Width: 420px;
+  }
+  
+  label.form-check-label {
+    font-size: 14px;
+  }
+  
+  input#formBasicEmail.form-control {
+    Height: 38px
+  }
+  
+  input#formBasicPassword.form-control {
+    Height: 38px
+  }
+  
+  div.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 420px;
+  }
+  
+  button.btn.btn-second.btn-lg {
+    color: white;
+    border-color: #6610f2;
+    background-color: #6610f2;
+    margin: 1em 0;
+    height: 39px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  
+  button.btn.btn-primary.btn-lg {
+    color: black;
+    border-color: #6610f2;
+    background-color: white;
+    font-weight: 500;
+    height: 39px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  
+  .description {
+    width: 420px;
+    margin-bottom: 15px;
+    display: flex;
+  }
+  
+  h1.text-description {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+  }
