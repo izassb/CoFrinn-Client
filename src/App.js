@@ -5,7 +5,7 @@ import Cadastro from './Pages/Cadastro';
 
 function App() {
   return (
-    <Cadastro/>
+    <Cadastro />
   );
 }
 
