@@ -1,4 +1,6 @@
+/* eslint-disable */
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import './style.css';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
@@ -17,6 +19,7 @@ function Login() {
     }
 
     setValidated(true);
+    window.location.href = "/home";
   };
 
   return (
@@ -66,7 +69,7 @@ function Login() {
             Ainda não tem uma conta?
           </h5>
           &nbsp;
-          <a href="google.com"> Clique aqui </a>
+          <Link to="/cadastro"> Clique aqui </Link>
           &nbsp;
           <h5 className="text-description2">
             para cadastrar-se

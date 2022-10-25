@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import "./style.css";
 import Button from "react-bootstrap/Button";
@@ -5,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import api from "../../services/api";
 import * as yup from 'yup';
 import { ErrorMessage, Formik, Form, Field } from 'formik';
+import { Link } from "react-router-dom";
 
 function Cadastro() {
 
@@ -15,10 +17,11 @@ function Cadastro() {
           password: values.password,
           confirmation: values.confirmation,
     };
+      window.location.href = "/home";
   //   try {
   //     const response = api.post("/users", data);
   //     if(response.status==201) {
-  //       window.location.href = "/telaPrincipal";
+  //      
   //     }      
   // } catch (error) {
   //     console.log(error);
@@ -125,7 +128,7 @@ function Cadastro() {
             <Button variant="second" size="lg" type="submit">
             Cadastrar
           </Button>
-          <Button variant="primary" size="lg">
+          <Button variant="primary" size="lg" onClick={() => window.location.href = "/login"}>
             Cancelar
           </Button>
           </div>
