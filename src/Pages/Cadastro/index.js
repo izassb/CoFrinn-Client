@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
-import api from "../../services/api";
+// import api from "../../services/api";
 import * as yup from 'yup';
 import { ErrorMessage, Formik, Form, Field } from 'formik';
 
@@ -15,15 +15,15 @@ function Cadastro() {
           password: values.password,
           confirmation: values.confirmation,
     };
-    try {
-      const response = api.post("/users", data);
-      if(response.status==201) {
-        window.location.href = "/telaPrincipal";
-      }      
-  } catch (error) {
-      console.log(error);
-      alert("Erro ao cadastrar usuário");
-  }
+  //   try {
+  //     const response = api.post("/users", data);
+  //     if(response.status==201) {
+  //       window.location.href = "/telaPrincipal";
+  //     }      
+  // } catch (error) {
+  //     console.log(error);
+  //     alert("Erro ao cadastrar usuário");
+  // }
 }
 
   const validationsRegister = yup.object().shape({
