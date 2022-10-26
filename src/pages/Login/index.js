@@ -8,17 +8,18 @@ import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import InputGroup from 'react-bootstrap/InputGroup';
 
+
 function Login() {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+    if (form.checkValidity() === true) {
       event.preventDefault();
       event.stopPropagation();
     }
 
-    setValidated(true);
+    setValidated(false);
     window.location.href = "/home";
   };
 
@@ -29,9 +30,9 @@ function Login() {
           <h1 className="title">CoFrinn</h1>
           <h5 className="subtitle">A melhor forma de gerenciar suas despesas financeiras</h5>
         </div>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form validated={validated} onSubmit={handleSubmit} novalidate>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <InputGroup id="inputGroupPrepend" hasValidation>
+            <InputGroup id="inputGroupPrepend" validated>
               <Form.Control
                 type="email"
                 placeholder="Digite seu email"
@@ -44,8 +45,8 @@ function Login() {
             </InputGroup>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <InputGroup id="inputGroupPrepend" hasValidation>
-              <Form.Control type="password" placeholder="Digite sua senha" aria-describedby="inputGroupPrepend" required />
+            <InputGroup id="inputGroupPrepend" validated>
+              <Form.Control type="password" placeholder="Digite sua senha" aria-describedby="inputGroupPrepend"/>
               <Form.Control.Feedback type="invalid">
                 Senha inválida.
               </Form.Control.Feedback>
