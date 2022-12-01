@@ -54,7 +54,6 @@ h1.title {
   
   Form {
     display: flex;
-    width: 550px;
     flex-direction: column;
     Width: 420px;
   }
