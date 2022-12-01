@@ -10,7 +10,6 @@ import { FaEyeSlash,FaEye } from "react-icons/fa";
 import * as messages from '../../components/toastr';
 
 function Perfil() {
-  const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [id, setId] = useState(null);
