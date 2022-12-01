@@ -3,47 +3,52 @@ import React from "react";
 import "./style.css";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import api from "../../services/api";
 import * as yup from 'yup';
 import { ErrorMessage, Formik, Form, Field } from 'formik';
-import { Link } from "react-router-dom";
+import AuthService from "../../services/auth";
+import { showSuccessMessage, showErrorMessage } from '../../components/toastr'
 
 function Cadastro() {
 
   const handleRegister = (values) => {
     const data = {
-          name: values.name,
+          nome: values.nome,
           email: values.email,
-          password: values.password,
+          senha: values.senha,
           confirmation: values.confirmation,
     };
-      window.location.href = "/home";
-  //   try {
-  //     const response = api.post("/users", data);
-  //     if(response.status==201) {
-  //      
-  //     }      
-  // } catch (error) {
-  //     console.log(error);
-  //     alert("Erro ao cadastrar usuário");
-  // }
+
+    try {
+      let res = AuthService.cadastrarUsuario(data)   
+      .then((response)=> {
+        AuthService.initSession(response.data);
+      showSuccessMessage("Usuario cadastrado com sucesso");
+      window.location.href="/home";
+      },
+      (error)=> {
+        showErrorMessage(error.response.data);
+      });
+  } catch (error) {
+      showErrorMessage("Erro ao cadastrar usuário");
+  }
+
 }
 
   const validationsRegister = yup.object().shape({
-    name: yup
+    nome: yup
     .string()
     .required("O nome é obrigatório"),
     email: yup
       .string()
       .email('email inválido')
       .required('O email é obrigatório'),
-    password: yup
+    senha: yup
       .string()
       .min(8, 'A senha deve ter pelo menos 8 caracteres')
       .required('A senha é obrigatória'),
     confirmation: yup
       .string()
-      .oneOf([yup.ref('password'), null], 'As senhas são diferentes')
+      .oneOf([yup.ref('senha'), null], 'As senhas são diferentes')
       .required('A confirmação da senha é obrigatória'),
   });
 
@@ -61,9 +66,9 @@ function Cadastro() {
         </div>
         <Formik
         initialValues={{
-          name: '',
+          nome: '',
           email: '',
-          password: '',
+          senha: '',
           confirmation:''
         }}
         validationSchema={validationsRegister} onSubmit={handleRegister}
@@ -71,14 +76,14 @@ function Cadastro() {
         <Form>
         <div className="mb-3">
             <Field
-              name="name"
+              name="nome"
               type="text"
               className="form-field"
               placeholder="Digite seu nome"/>
             
             <ErrorMessage
               component="span"
-              name="name"
+              name="nome"
               className="form-error"
             />
           </div>
@@ -99,14 +104,14 @@ function Cadastro() {
 
           <div className="mb-3">
             <Field
-              name="password"
+              name="senha"
               className="form-field"
               type="password"
               placeholder="Digite sua senha"/>
 
             <ErrorMessage
               component="span"
-              name="password"
+              name="senha"
               className="form-error"
             />
           </div>

@@ -1,0 +1,146 @@
+
+
+h1.title {
+    font-style: italic;
+    font-size: 33px;
+    font: 700;
+    font-weight: bold;
+    font-family: 'Roboto';
+  }
+  
+  h5.subtitle {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.45);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  
+  div.content {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F2;
+  }
+  
+  div.container {
+    display: flex;
+    height: 550px;
+    width: 550px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  div.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    gap: 12px;
+  }
+  
+  div.description {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  a.nav-link {
+    color: #1890FF;
+    font-size: 14px;
+  }
+  
+  Form {
+    display: flex;
+    width: 550px;
+    flex-direction: column;
+    Width: 420px;
+  }
+  
+  label.form-check-label {
+    font-size: 14px;
+  }
+  
+  input#formBasicEmail.form-control {
+    Height: 38px;
+    border-radius: 4px;
+  }
+  
+  input#formBasicPassword.form-control {
+    Height: 38px;
+    border-radius: 4px;
+  }
+  
+  input#formBasicCheckbox.form-check-input{
+    border-radius: 2px;
+  }
+  
+  input#formBasicCheckbox.form-check-input:checked {
+    background-color: #3B8C7D;
+    border-color: #3B8C7D;
+    border-radius: 2px;
+  }
+  
+  div.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 420px;
+  }
+  
+  button.btn.btn-second.btn-lg {
+    color: white;
+    border-color: #3B8C7D;
+    background-color: #3B8C7D;
+    margin: 1em 0;
+    height: 39px;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+  }
+  
+  button.btn.btn-primary.btn-lg {
+    color: #3B8C7D;
+    border-color: #3B8C7D;
+    background-color: #F8FDFF;
+    height: 39px;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+  }
+  
+  .description2 {
+    display: flex;
+    height: 100px;
+    width: 460px;
+    padding: 25px;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  h5.text-description2 {
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 4px;
+  }
+  
+  a{
+    color: #1890FFD9!important;
+    text-decoration: none!important;
+    padding: 1.5px;
+  }
+  
+  a.nav-link {
+    font-size: 16px;
+  }

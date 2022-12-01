@@ -7,20 +7,54 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import InputGroup from 'react-bootstrap/InputGroup';
-
+import AuthService from '../../services/auth';
+import { FaEyeSlash,FaEye } from "react-icons/fa";
+import { showSuccessMessage,showErrorMessage } from '../../components/toastr'
 
 function Login() {
   const [validated, setValidated] = useState(false);
+  const [email, setEmail] = useState("");
+  const [values, setValues] = React.useState({
+    password: "",
+    showPassword: false,
+  });
+  
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
 
-  const handleSubmit = (event) => {
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
+  const handlePasswordChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+  
+  const handleSubmit = async (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
       event.preventDefault();
       event.stopPropagation();
     }
-
+   
     setValidated(false);
-    window.location.href = "/home";
+    let data = {
+      email: email,
+      senha: values.password,
+    }
+
+    try {
+      let res = AuthService.authenticate(data)   
+      .then((response)=> {
+        AuthService.initSession(response.data);
+        showSuccessMessage("Login realizado com sucesso");
+        window.location.href="/home";
+      })
+    } catch (error) {
+      showErrorMessage(error.response.data);
+    }
+    
   };
 
   return (
@@ -36,6 +70,10 @@ function Login() {
               <Form.Control
                 type="email"
                 placeholder="Digite seu email"
+                value={email}
+                onChange={ (e) => {
+                  setEmail(e.target.value);
+                }}
                 aria-describedby="inputGroupPrepend"
                 required
               />
@@ -46,7 +84,15 @@ function Login() {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <InputGroup id="inputGroupPrepend" validated>
-              <Form.Control type="password" placeholder="Digite sua senha" aria-describedby="inputGroupPrepend"/>
+              <Form.Control type={values.showPassword ? "text" : "password"} placeholder="Digite sua senha" 
+              value={values.password} 
+              onChange={handlePasswordChange("password")}
+              aria-describedby="inputGroupPrepend"/>
+              <Button onClick={handleClickShowPassword}
+              onMouseDown={handleMouseDownPassword} 
+            >
+              {values.showPassword ? <FaEye /> : <FaEyeSlash />}
+              </Button>
               <Form.Control.Feedback type="invalid">
                 Senha inválida.
               </Form.Control.Feedback>
