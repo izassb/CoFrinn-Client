@@ -1,43 +1,29 @@
 /* eslint-disable */
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-background:#3B8C7D;
-display:flex;
-margin-bottom: 1em;
+  background: #3b8c7d;
+  display: flex;
+  margin-bottom: 1em;
 `;
+
 export const Header = styled.div`
-justify-content: space-around;
-flex-direction: start;
-display:flex;
+  flex-direction: start;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h1`
-padding:20px;
-text-align: left;
-color:#fff;
+  padding: 20px 0px 20px 30px;
+  text-align: left;
+  font-family: 'Roboto';
+  color: #fff;
 `;
 
-export const Button = styled.button`
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
+export const SubTitle = styled.h4`
   cursor: pointer;
-  color: white;
-  font-size:12px;
-  width:50px;
-  height:50px;
-  background-color: teal;
-`;
-
-export const Buttonn = styled.button`
-  padding: 5px 10px;
-  cursor: pointer;
-  padding:20px;
-  font-size:12px;
-  color:#fff;
-  width:100px;
-  height:100px;
-  background-color: #3B8C7D;
-  border:none;
+  padding: 30px 100px 20px 0px;
+  color: #fff;
+  font-family: 'Roboto';
 `;

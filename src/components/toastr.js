@@ -11,7 +11,7 @@ toastr.options = {
   "onclick": null,
   "showDuration": "300",
   "hideDuration": "1000",
-  "timeOut": "2000",
+  "timeOut": "3000",
   "extendedTimeOut": "1000",
   "showEasing": "swing",
   "hideEasing": "linear",
@@ -29,4 +29,8 @@ export function showSuccessMessage(message) {
 
 export function showErrorMessage(message) {
   showMessage("error", "Erro", message)
+}
+
+export function showWarningMessage(message) {
+  showMessage("warning", "Atenção", message)
 }

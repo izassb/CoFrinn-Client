@@ -17,9 +17,9 @@ export const Tbody = styled.tbody``;
 export const Tr = styled.tr``;
 
 export const Th = styled.th`
-  text-align: start;
   border-bottom: inset;
   padding: 1em;
+  color: #262626;
   text-align: ${(props) => (props.alignCenter ? "center" : "start")};
   width: ${(props) => (props.width ? props.width + "%" : "auto")};
 `;
@@ -28,9 +28,10 @@ export const Td = styled.td`
   padding-top: 15px;
   text-align: ${(props) => (props.alignCenter ? "center" : "start")};
   word-break: break-all;
+  padding: 1em;
   svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 `;
 
@@ -47,4 +48,17 @@ export const Input = styled.input`
   padding: 5px 10px;
   font-size: 15px;
   border: 1px solid #ccc;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px;
+  width: 143px;
+  height: 39px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: teal;
 `;
