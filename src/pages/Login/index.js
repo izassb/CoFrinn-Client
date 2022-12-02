@@ -44,16 +44,16 @@ function Login() {
       senha: values.password,
     }
 
-    try {
-      let res = AuthService.authenticate(data)   
-      .then((response)=> {
-        AuthService.initSession(response.data);
-        showSuccessMessage("Login realizado com sucesso");
+    // try {
+    //   let res = AuthService.authenticate(data)   
+    //   .then((response)=> {
+        AuthService.initSession(data);
+    //     showSuccessMessage("Login realizado com sucesso");
         window.location.href="/home";
-      })
-    } catch (error) {
-      showErrorMessage(error.response.data);
-    }
+    //   })
+    // } catch (error) {
+    //   showErrorMessage(error.response.data);
+    // }
     
   };
 

@@ -56,8 +56,10 @@ const Resume = () => {
           Icon={FaRegArrowAltCircleDown}
           value={totalDespesa}
         />
-        <ResumeItem title="Total" Icon={FaDollarSign} 
-        value={totalSaldo}
+        <ResumeItem 
+          title="Total" 
+          Icon={FaDollarSign} 
+          value={totalSaldo}
         />
       </C.Container>
     )
